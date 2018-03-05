@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.wilsonzhu.calendar_app.activity.DescriptionDetailsActivity">
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline_left"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.35"/>
+
+    <TextView
+        android:id="@+id/calendar_date_chosen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""/>
+
+    <EditText
+        android:id="@+id/date_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="enter description here"
+        android:layout_below="@+id/calendar_date_chosen"/>
+
+    <Button
+        android:id="@+id/save_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/save_text"
+        app:layout_constraintTop_toBottomOf="@id/date_description"
+        app:layout_constraintStart_toEndOf="@id/guideline_left"/>
+
+</android.support.constraint.ConstraintLayout>
