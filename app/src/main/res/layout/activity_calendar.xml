@@ -12,4 +12,6 @@
         android:layout_height="wrap_content">
     </CalendarView>
 
+    <include layout="@layout/toolbar"></include>
+
 </android.support.constraint.ConstraintLayout>
