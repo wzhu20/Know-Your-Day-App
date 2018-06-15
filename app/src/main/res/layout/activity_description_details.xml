@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
     tools:context="com.example.wilsonzhu.calendar_app.activity.DescriptionDetailsActivity">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar">
+    </include>
+
     <android.support.constraint.Guideline
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,14 +22,15 @@
         android:id="@+id/calendar_date_chosen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""/>
+        android:text=""
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"/>
 
     <EditText
         android:id="@+id/date_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="enter description here"
-        android:layout_below="@+id/calendar_date_chosen"/>
+        app:layout_constraintTop_toBottomOf="@+id/calendar_date_chosen"/>
 
     <Button
         android:id="@+id/save_button"

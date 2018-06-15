@@ -1,7 +1,7 @@
 package com.example.wilsonzhu.calendar_app.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,7 +11,7 @@ import android.widget.Toast;
 import com.example.wilsonzhu.calendar_app.ApplicationPreferences;
 import com.example.wilsonzhu.calendar_app.R;
 
-public class DescriptionDetailsActivity extends AppCompatActivity implements View.OnClickListener{
+public class DescriptionDetailsActivity extends BaseActivity implements View.OnClickListener{
 
     private String calendarDate;
     private Button saveButton;
@@ -19,21 +19,18 @@ public class DescriptionDetailsActivity extends AppCompatActivity implements Vie
     private EditText descriptionDetails;
     private static ApplicationPreferences prefs;
 
-    public DescriptionDetailsActivity()
-    {
-
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_description_details);
+        super.setUpToolbar((Toolbar) findViewById(R.id.toolbar));
         setUp();
     }
 
     private void setUp()
     {
+        adjustToolbarTitle("Notes");
         prefs = new ApplicationPreferences(getApplicationContext());
         saveButton = findViewById(R.id.save_button);
         saveButton.setOnClickListener(this);
