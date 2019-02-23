@@ -1,4 +1,4 @@
-package com.example.wilsonzhu.calendar_app;
+package com.example.wilsonzhu.calendar_app.HTTPClient;
 
 import android.content.Context;
 
@@ -7,7 +7,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 
 public class HTTPRequestQueue {
-    private HTTPRequestQueue mRequestQueueInstance;
+    private static HTTPRequestQueue mRequestQueueInstance;
     private RequestQueue mRequestQueue;
     private static Context mContext;
 
@@ -25,7 +25,7 @@ public class HTTPRequestQueue {
         return mRequestQueue;
     }
 
-    public HTTPRequestQueue getRequestQueueInstance() {
+    public static HTTPRequestQueue getRequestQueueInstance() {
         if (mRequestQueueInstance == null) {
             mRequestQueueInstance = new HTTPRequestQueue(mContext.getApplicationContext());
         }
