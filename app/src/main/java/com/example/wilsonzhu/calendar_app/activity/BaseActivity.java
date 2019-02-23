@@ -6,27 +6,22 @@ import android.support.v7.widget.Toolbar;
 
 import com.example.wilsonzhu.calendar_app.R;
 
-public abstract class BaseActivity extends AppCompatActivity
-{
+public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstance)
-    {
+    protected void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
     }
 
-    protected void setUpToolbar(Toolbar toolbar)
-    {
-        if (toolbar == null)
-        {
+    protected void setUpToolbar(Toolbar toolbar) {
+        if (toolbar == null) {
             return;
         }
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
     }
 
-    protected void adjustToolbarTitle(String newTitle)
-    {
+    protected void adjustToolbarTitle(String newTitle) {
         getSupportActionBar().setTitle(newTitle);
     }
 }
