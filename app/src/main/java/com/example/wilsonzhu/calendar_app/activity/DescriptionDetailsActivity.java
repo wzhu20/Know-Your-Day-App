@@ -11,7 +11,7 @@ import android.widget.Toast;
 import com.example.wilsonzhu.calendar_app.ApplicationPreferences;
 import com.example.wilsonzhu.calendar_app.R;
 
-public class DescriptionDetailsActivity extends BaseActivity implements View.OnClickListener{
+public class DescriptionDetailsActivity extends BaseActivity implements View.OnClickListener {
 
     private String calendarDate;
     private Button saveButton;
@@ -20,16 +20,14 @@ public class DescriptionDetailsActivity extends BaseActivity implements View.OnC
     private static ApplicationPreferences prefs;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_description_details);
         super.setUpToolbar((Toolbar) findViewById(R.id.toolbar));
         setUp();
     }
 
-    private void setUp()
-    {
+    private void setUp() {
         adjustToolbarTitle("Notes");
         prefs = new ApplicationPreferences(getApplicationContext());
         saveButton = findViewById(R.id.save_button);
@@ -45,23 +43,17 @@ public class DescriptionDetailsActivity extends BaseActivity implements View.OnC
     }
 
     @Override
-    public void onClick(View v)
-    {
-        if (v == saveButton)
-        {
+    public void onClick(View v) {
+        if (v == saveButton) {
             Toast.makeText(this, R.string.saved_text, Toast.LENGTH_SHORT).show();
             refreshScreen();
-        }
-
-        else if (v == descriptionDetails)
-        {
+        } else if (v == descriptionDetails) {
             descriptionDetails.setFocusableInTouchMode(true);
             descriptionDetails.setCursorVisible(true);
         }
     }
 
-    private void refreshScreen()
-    {
+    private void refreshScreen() {
         prefs.setString(prefs.getString("date"), descriptionDetails.getEditableText().toString());
         descriptionDetails.setText(prefs.getString(calendarDate));
         onBackPressed();

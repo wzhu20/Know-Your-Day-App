@@ -11,14 +11,12 @@ public class HTTPRequestQueue {
     private RequestQueue mRequestQueue;
     private static Context mContext;
 
-    private HTTPRequestQueue(Context context)
-    {
+    private HTTPRequestQueue(Context context) {
         mContext = context;
         mRequestQueue = getRequestQueue();
     }
 
-    public RequestQueue getRequestQueue()
-    {
+    public RequestQueue getRequestQueue() {
         if (mRequestQueue == null) {
             mRequestQueue = Volley.newRequestQueue(mContext);
         }
@@ -32,7 +30,7 @@ public class HTTPRequestQueue {
         return mRequestQueueInstance;
     }
 
-    public <T> void addToRequestQueue(Request<T> request, String tag){
+    public <T> void addToRequestQueue(Request<T> request, String tag) {
         request.setTag(tag);
         getRequestQueue().add(request);
     }
