@@ -18,7 +18,7 @@ public class TTCStation {
         return allBuses;
     }
 
-    public void setAllBuses(List<BusInformation> allBuses) {
+    public void addBusToStation(List<BusInformation> allBuses) {
         this.allBuses = allBuses;
     }
 }
