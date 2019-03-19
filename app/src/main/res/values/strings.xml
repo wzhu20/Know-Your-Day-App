@@ -2,4 +2,36 @@
     <string name="app_name">calendar-app</string>
     <string name="save_text">SAVE</string>
     <string name="saved_text">SAVED</string>
+    <string-array name="line_1_stations">
+        <item>finch_station</item>
+        <item>north_york_centre_station</item>
+        <item>sheppard-yonge_station</item>
+        <item>york_mills_station</item>
+        <item>lawrence_station</item>
+        <item>eglinton_station</item>
+        <item>davisville_station</item>
+        <item>st_clair_station</item>
+        <item>summerhill_station</item>
+        <item>rosedale_station</item>
+        <item>bloor-yonge_station</item>
+        <item>wellesley_station</item>
+        <item>college_station</item>
+        <item>dundas_station</item>
+        <item>queen_station</item>
+        <item>king_station</item>
+        <item>union_station</item>
+        <item>st_andrew_station</item>
+        <item>osgoode_station</item>
+        <item>st_patrick_station</item>
+        <item>queens_park_station</item>
+        <item>museum_station</item>
+        <item>st_george_station</item>
+        <item>dupont_station</item>
+        <item>st_clair_west_station</item>
+        <item>eglinton_west_station</item>
+        <item>glencairn_station</item>
+        <item>lawrence_west_station</item>
+        <item>yorkdale_station</item>
+        <item>sheppard_west_station</item>
+    </string-array>
 </resources>
