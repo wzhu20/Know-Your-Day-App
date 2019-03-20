@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.example.wilsonzhu.calendar_app.Adapter.TTCStationAdapter;
+import com.example.wilsonzhu.calendar_app.Adapter.TTCBusInformationAdapter;
 import com.example.wilsonzhu.calendar_app.R;
 
 import java.util.ArrayList;
@@ -26,7 +26,7 @@ public class TTCStationActivity extends BaseActivity {
         List<String> words = new ArrayList<>();
         words.add("hello");
         words.add("world");
-        mAdapter = new TTCStationAdapter(words);
+        mAdapter = new TTCBusInformationAdapter(words);
         recyclerView.setAdapter(mAdapter);
 
     }

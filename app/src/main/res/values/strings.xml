@@ -34,4 +34,53 @@
         <item>yorkdale_station</item>
         <item>sheppard_west_station</item>
     </string-array>
+    <string-array name="line_2_stations">
+        <item>kennedy_station</item>
+        <item>warden_station</item>
+        <item>victoria_park_station</item>
+        <item>main_street_station</item>
+        <item>woodbine_station</item>
+        <item>coxwell_station</item>
+        <item>greenwood_station</item>
+        <item>donlands_station</item>
+        <item>pape_station</item>
+        <item>chester_station</item>
+        <item>broadview_station</item>
+        <item>castle_frank_station</item>
+        <item>sherbourne_station</item>
+        <item>bloor-yonge_station</item>
+        <item>bay_station</item>
+        <item>st_george_station</item>
+        <item>spadina_station</item>
+        <item>bathurst_station</item>
+        <item>christie_station</item>
+        <item>ossington_station</item>
+        <item>dufferin_station</item>
+        <item>lansdowne_station</item>
+        <item>dundas_west_station</item>
+        <item>keele_station</item>
+        <item>high_park_station</item>
+        <item>runnymede_station</item>
+        <item>jane_station</item>
+        <item>old_mill_station</item>
+        <item>royal_york_station</item>
+        <item>islington_station</item>
+        <item>kipling_station</item>
+    </string-array>
+
+    <string-array name="line_3_stations">
+        <item>mccowan_station</item>
+        <item>scarborough_centre_station</item>
+        <item>midland_station</item>
+        <item>ellesmere_station</item>
+        <item>lawrence_east_station</item>
+        <item>kennedy_station</item>
+    </string-array>
+    <string-array name="line_4_stations">
+        <item>sheppard-yonge_station</item>
+        <item>bayview_station</item>
+        <item>bessarion_station</item>
+        <item>leslie_station</item>
+        <item>don_mills_station</item>
+    </string-array>
 </resources>
