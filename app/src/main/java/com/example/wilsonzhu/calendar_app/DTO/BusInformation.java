@@ -10,7 +10,7 @@ public class BusInformation {
         return departureTime;
     }
 
-    public void setDepartureTime(List<String> departureTime) {
+    public void setDepartureTimes(List<String> departureTime) {
         this.departureTime = departureTime;
     }
 

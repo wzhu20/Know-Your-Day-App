@@ -11,10 +11,10 @@ import com.example.wilsonzhu.calendar_app.R;
 
 import java.util.List;
 
-public class TTCStationAdapter extends RecyclerView.Adapter<TTCStationAdapter.TTCStationViewHolder> {
+public class TTCBusInformationAdapter extends RecyclerView.Adapter<TTCBusInformationAdapter.TTCStationViewHolder> {
     private List<String> data;
 
-    public TTCStationAdapter(List<String> dataSet) {
+    public TTCBusInformationAdapter(List<String> dataSet) {
         data = dataSet;
     }
 
