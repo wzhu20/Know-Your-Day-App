@@ -7,6 +7,7 @@ import com.example.wilsonzhu.calendar_app.activity.CalendarActivity;
 import com.example.wilsonzhu.calendar_app.activity.DescriptionDetailsActivity;
 import com.example.wilsonzhu.calendar_app.activity.SplashActivity;
 import com.example.wilsonzhu.calendar_app.activity.TTCStationActivity;
+import com.example.wilsonzhu.calendar_app.activity.TTCSubwayLinesActivity;
 
 /**
  * Created by Wilson Zhu on 3/4/2018.
@@ -35,6 +36,11 @@ public class IntentUtils {
 
     public static void startSplashScreenActivity(Activity activity)
     {
+        StartActivityWrapper startActivityWrapper = new StartActivityWrapper(activity);
+        startActivityWrapper.startActivity(new Intent (activity, TTCSubwayLinesActivity.class));
+    }
+
+    public static void startTTCStationActivity(Activity activity) {
         StartActivityWrapper startActivityWrapper = new StartActivityWrapper(activity);
         startActivityWrapper.startActivity(new Intent (activity, TTCStationActivity.class));
     }
