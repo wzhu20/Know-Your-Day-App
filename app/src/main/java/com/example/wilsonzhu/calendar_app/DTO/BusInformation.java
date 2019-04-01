@@ -6,6 +6,11 @@ public class BusInformation {
     private List<String> departureTime;
     private String destination;
 
+    public BusInformation(List<String> departureTime, String destination) {
+        this.setDepartureTimes(departureTime);
+        this.setDestination(destination);
+    }
+
     public List<String> getDepartureTime() {
         return departureTime;
     }

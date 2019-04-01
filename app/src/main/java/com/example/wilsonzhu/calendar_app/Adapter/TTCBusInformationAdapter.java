@@ -5,17 +5,18 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.Button;
 
 import com.example.wilsonzhu.calendar_app.R;
 
 import java.util.List;
 
 public class TTCBusInformationAdapter extends RecyclerView.Adapter<TTCBusInformationAdapter.TTCStationViewHolder> {
-    private List<String> data;
+    private List<String> allStations;
 
-    public TTCBusInformationAdapter(List<String> dataSet) {
-        data = dataSet;
+    public TTCBusInformationAdapter(List<String> allStations) {
+        this.allStations = allStations;
+
     }
 
     @NonNull
@@ -28,21 +29,21 @@ public class TTCBusInformationAdapter extends RecyclerView.Adapter<TTCBusInforma
 
     @Override
     public void onBindViewHolder(@NonNull TTCStationViewHolder ttcStationViewHolder, int i) {
-        String word = data.get(i);
-        ((TextView)ttcStationViewHolder.textView).setText(word);
+        String stationName = allStations.get(i);
+        ttcStationViewHolder.button.setText(stationName.replace("_", " "));
     }
 
     @Override
     public int getItemCount() {
-        return data.size();
+        return allStations.size();
     }
 
     public static class TTCStationViewHolder extends RecyclerView.ViewHolder {
-        private View textView;
+        public Button button;
 
         public TTCStationViewHolder(View view) {
             super(view);
-            textView = view.findViewById(R.id.ttc_station_name);
+            button = view.findViewById(R.id.ttc_station_button);
         }
     }
 
