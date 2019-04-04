@@ -27,7 +27,7 @@ public class TTCStationActivity extends BaseActivity implements TTCBusInformatio
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        mAdapter = new TTCBusInformationAdapter(busInformation);
+        mAdapter = new TTCBusInformationAdapter(busInformation, this);
         recyclerView.setAdapter(mAdapter);
     }
 

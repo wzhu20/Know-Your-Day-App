@@ -24,6 +24,8 @@
 
         <activity android:name=".activity.DescriptionDetailsActivity"/>
 
+        <activity android:name=".activity.BusesActivity"/>
+
         <activity android:name=".activity.TTCSubwayLinesActivity"></activity>
 
     </application>

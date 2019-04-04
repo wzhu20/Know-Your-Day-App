@@ -3,6 +3,8 @@ package com.example.wilsonzhu.calendar_app.Utils;
 import android.app.Activity;
 import android.content.Intent;
 
+import com.example.wilsonzhu.calendar_app.Adapter.BusesAdapter;
+import com.example.wilsonzhu.calendar_app.activity.BusesActivity;
 import com.example.wilsonzhu.calendar_app.activity.CalendarActivity;
 import com.example.wilsonzhu.calendar_app.activity.DescriptionDetailsActivity;
 import com.example.wilsonzhu.calendar_app.activity.SplashActivity;
@@ -43,5 +45,10 @@ public class IntentUtils {
     public static void startTTCStationActivity(Activity activity) {
         StartActivityWrapper startActivityWrapper = new StartActivityWrapper(activity);
         startActivityWrapper.startActivity(new Intent (activity, TTCStationActivity.class));
+    }
+
+    public static void startBusesActivity(Activity activity) {
+        StartActivityWrapper startActivityWrapper = new StartActivityWrapper(activity);
+        startActivityWrapper.startActivity(new Intent (activity, BusesActivity.class));
     }
 }

@@ -23,9 +23,9 @@ public class HTTPRequestQueue {
         return mRequestQueue;
     }
 
-    public static HTTPRequestQueue getRequestQueueInstance() {
+    public static HTTPRequestQueue getRequestQueueInstance(Context context) {
         if (mRequestQueueInstance == null) {
-            mRequestQueueInstance = new HTTPRequestQueue(mContext.getApplicationContext());
+            mRequestQueueInstance = new HTTPRequestQueue(context.getApplicationContext());
         }
         return mRequestQueueInstance;
     }
