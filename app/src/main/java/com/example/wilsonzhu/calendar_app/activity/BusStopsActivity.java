@@ -27,7 +27,6 @@ public class BusStopsActivity extends BaseActivity implements TTCBusInformationP
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
-    private ArrayList<String> busStops = new ArrayList<>();
     private HTTPRequestHandler requestHandler;
     private MyApplicationVar applicationVar;
 
@@ -47,34 +46,9 @@ public class BusStopsActivity extends BaseActivity implements TTCBusInformationP
     private void initBusStopsData() {
         final Activity activity = this;
         String routeChosen = applicationVar.getBusRouteChoesen();
-        URL += routeChosen;
-
-        if (!applicationVar.getBusInformation(routeChosen).getBusStops().isEmpty()) {
-            mAdapter = new BusStopsAdapter(applicationVar.getBusInformation(routeChosen).getBusStops(), activity);
-            recyclerView.setAdapter(mAdapter);
-        } else {
-            requestHandler.HTTPGetRequest(URL, new HTTPRequestListener() {
-                @Override
-                public void onResponse(String response) {
-                    try {
-                        JSONObject jsonObject = new JSONObject(response);
-                        JSONArray jsonArray = ((JSONObject) jsonObject.getJSONArray("route").get(0)).getJSONObject("header").getJSONArray("stop");
-                        for (int i = 0; i < jsonArray.length(); i++) {
-                        applicationVar.getBusInformation(applicationVar.getBusRouteChoesen()).addBusStop(((JSONObject)jsonArray.get(i)).getString("content"));
-                        }
-                        mAdapter = new BusStopsAdapter(applicationVar.getBusInformation(applicationVar.getBusRouteChoesen()).getBusStops(), activity);
-                        recyclerView.setAdapter(mAdapter);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }, new HTTPErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-
-                }
-            }, "henlo", this);
-        }
+        String directionChosen = applicationVar.getDIRECTION();
+        mAdapter = new BusStopsAdapter(applicationVar.getBusInformation(routeChosen + directionChosen).getBusStops(), activity);
+        recyclerView.setAdapter(mAdapter);
     }
 
     @Override

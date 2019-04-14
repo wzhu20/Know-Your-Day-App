@@ -3,6 +3,7 @@ package com.example.wilsonzhu.calendar_app.Utils;
 import android.app.Activity;
 import android.content.Intent;
 
+import com.example.wilsonzhu.calendar_app.activity.BusDirectionActivity;
 import com.example.wilsonzhu.calendar_app.activity.BusesActivity;
 import com.example.wilsonzhu.calendar_app.activity.DescriptionDetailsActivity;
 import com.example.wilsonzhu.calendar_app.activity.BusStopsActivity;
@@ -39,7 +40,7 @@ public class IntentUtils {
         startActivityWrapper.startActivity(new Intent (activity, TTCSubwayLinesActivity.class));
     }
 
-    public static void startTTCStationActivity(Activity activity) {
+    public static void startBusStopsActivity(Activity activity) {
         StartActivityWrapper startActivityWrapper = new StartActivityWrapper(activity);
         startActivityWrapper.startActivity(new Intent (activity, BusStopsActivity.class));
     }
@@ -47,5 +48,10 @@ public class IntentUtils {
     public static void startBusesActivity(Activity activity) {
         StartActivityWrapper startActivityWrapper = new StartActivityWrapper(activity);
         startActivityWrapper.startActivity(new Intent (activity, BusesActivity.class));
+    }
+
+    public static void startBusesDirectionActivity(Activity activity) {
+        StartActivityWrapper startActivityWrapper = new StartActivityWrapper(activity);
+        startActivityWrapper.startActivity(new Intent (activity, BusDirectionActivity.class));
     }
 }

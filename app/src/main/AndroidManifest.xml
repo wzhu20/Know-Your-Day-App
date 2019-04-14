@@ -17,16 +17,12 @@
             </intent-filter>
 
         </activity>
-
         <activity android:name=".activity.BusStopsActivity"/>
-
         <activity android:name=".activity.CalendarActivity"/>
-
         <activity android:name=".activity.DescriptionDetailsActivity"/>
-
         <activity android:name=".activity.BusesActivity"/>
-
         <activity android:name=".activity.TTCSubwayLinesActivity"></activity>
+        <activity android:name=".activity.BusDirectionActivity"></activity>
 
     </application>
 

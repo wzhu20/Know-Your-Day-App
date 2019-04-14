@@ -41,7 +41,7 @@ public class BusesAdapter extends RecyclerView.Adapter<TTCBusInformationAdapter.
             public void onClick(View view) {
                 ((MyApplicationVar) activity.getApplication()).setBusRouteChosen(busTag);
                 ((MyApplicationVar) activity.getApplication()).setBUSNAME(busName);
-                IntentUtils.startTTCStationActivity(activity);
+                IntentUtils.startBusesDirectionActivity(activity);
             }
         });
     }
