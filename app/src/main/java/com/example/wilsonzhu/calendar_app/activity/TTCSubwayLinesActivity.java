@@ -46,6 +46,6 @@ public class TTCSubwayLinesActivity extends BaseActivity implements Button.OnCli
         else {
             ((MyApplicationVar)this.getApplication()).setLineChosen(4);
         }
-        IntentUtils.startTTCStationActivity(this);
+        IntentUtils.startBusesActivity(this);
     }
 }

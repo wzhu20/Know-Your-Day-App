@@ -1,11 +1,13 @@
 package com.example.wilsonzhu.calendar_app.activity;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.android.volley.VolleyError;
 import com.example.wilsonzhu.calendar_app.Adapter.BusesAdapter;
+import com.example.wilsonzhu.calendar_app.DTO.BusInformation;
 import com.example.wilsonzhu.calendar_app.HTTPClient.HTTPErrorListener;
 import com.example.wilsonzhu.calendar_app.HTTPClient.HTTPRequestHandler;
 import com.example.wilsonzhu.calendar_app.HTTPClient.HTTPRequestListener;
@@ -21,7 +23,7 @@ import java.util.ArrayList;
 public class BusesActivity extends BaseActivity {
     private final String URL = "http://webservices.nextbus.com/service/publicJSONFeed?command=routeList&a=ttc";
 
-    private ArrayList<String> allBuses = new ArrayList<>();
+    private ArrayList<BusInformation> allBuses = new ArrayList<>();
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -42,6 +44,7 @@ public class BusesActivity extends BaseActivity {
     private void initData() {
         // Make Api call to Myttc to get all buses to a station and display it
         String path = ((MyApplicationVar) this.getApplication()).getStation();
+        final Activity activity = this;
         httpRequestHandler.HTTPGetRequest(URL , new HTTPRequestListener() {
             @Override
             public void onResponse(String response) {
@@ -50,9 +53,12 @@ public class BusesActivity extends BaseActivity {
                     JSONArray stops = jsonObject.getJSONArray("route");
                     if (stops != null) {
                         for(int i = 0; i < stops.length(); i++) {
-                            allBuses.add(((JSONObject)stops.get(i)).getString("title"));
+                            String tag = ((JSONObject)stops.get(i)).getString("tag");
+                            BusInformation busInformation = new BusInformation(((JSONObject)stops.get(i)).getString("title"), tag);
+                            ((MyApplicationVar)activity.getApplication()).updateBusInformationMap(tag, busInformation);
+                            allBuses.add(busInformation);
                         }
-                        mAdapter = new BusesAdapter(allBuses);
+                        mAdapter = new BusesAdapter(allBuses, activity);
                         recyclerView.setAdapter(mAdapter);
                     }
                 } catch (JSONException e) {

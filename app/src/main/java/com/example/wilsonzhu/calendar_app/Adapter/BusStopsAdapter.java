@@ -8,55 +8,54 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.wilsonzhu.calendar_app.DTO.BusInformation;
 import com.example.wilsonzhu.calendar_app.R;
 import com.example.wilsonzhu.calendar_app.Utils.IntentUtils;
 import com.example.wilsonzhu.calendar_app.Utils.MyApplicationVar;
 
 import java.util.List;
 
-public class TTCBusInformationAdapter extends RecyclerView.Adapter<TTCBusInformationAdapter.TTCStationViewHolder> {
-    private List<String> allStations;
+public class BusStopsAdapter extends RecyclerView.Adapter<BusStopsAdapter.BusViewHolder> {
+    private List<String> allBusStops;
     private Activity activity;
 
-    public TTCBusInformationAdapter(List<String> allStations, Activity activity) {
-        this.allStations = allStations;
+    public BusStopsAdapter(List<String> allBusStops, Activity activity) {
+        this.allBusStops = allBusStops;
         this.activity = activity;
 
     }
 
     @NonNull
     @Override
-    public TTCStationViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public BusStopsAdapter.BusViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.ttc_station_view_holder, viewGroup, false);
-        return new TTCStationViewHolder(v);
+        return new BusStopsAdapter.BusViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull TTCStationViewHolder ttcStationViewHolder, int i) {
-        final String stationName = allStations.get(i);
-        ttcStationViewHolder.button.setText(stationName);
+    public void onBindViewHolder(@NonNull BusStopsAdapter.BusViewHolder ttcStationViewHolder, int i) {
+        final String busInformation = allBusStops.get(i);
+        ttcStationViewHolder.button.setText(busInformation);
         ttcStationViewHolder.button.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((MyApplicationVar) activity.getApplication()).setStationChosen(stationName.replace(" ", "_"));
-                IntentUtils.startBusesActivity(activity);
+                ((MyApplicationVar) activity.getApplication()).setBusRouteChosen(busInformation);
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return allStations.size();
+        return allBusStops.size();
     }
 
-    public static class TTCStationViewHolder extends RecyclerView.ViewHolder {
+    public static class BusViewHolder extends RecyclerView.ViewHolder {
         public Button button;
 
-        public TTCStationViewHolder(View view) {
+        public BusViewHolder(View view) {
             super(view);
             button = view.findViewById(R.id.ttc_station_button);
         }
     }
-
 }
