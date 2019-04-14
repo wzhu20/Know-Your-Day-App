@@ -54,9 +54,11 @@ public class BusesActivity extends BaseActivity {
                     if (stops != null) {
                         for(int i = 0; i < stops.length(); i++) {
                             String tag = ((JSONObject)stops.get(i)).getString("tag");
-                            BusInformation busInformation = new BusInformation(((JSONObject)stops.get(i)).getString("title"), tag);
-                            ((MyApplicationVar)activity.getApplication()).updateBusInformationMap(tag, busInformation);
-                            allBuses.add(busInformation);
+                            BusInformation busInformation1 = new BusInformation(((JSONObject)stops.get(i)).getString("title"), tag);
+                            BusInformation busInformation2 = new BusInformation(((JSONObject)stops.get(i)).getString("title"), tag);
+                            ((MyApplicationVar)activity.getApplication()).updateBusInformationMap(tag + "1", busInformation1);
+                            ((MyApplicationVar)activity.getApplication()).updateBusInformationMap(tag + "2", busInformation2);
+                            allBuses.add(busInformation1);
                         }
                         mAdapter = new BusesAdapter(allBuses, activity);
                         recyclerView.setAdapter(mAdapter);
