@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 
 import com.example.wilsonzhu.calendar_app.activity.BusDirectionActivity;
+import com.example.wilsonzhu.calendar_app.activity.BusStopTimesActivity;
 import com.example.wilsonzhu.calendar_app.activity.BusesActivity;
 import com.example.wilsonzhu.calendar_app.activity.DescriptionDetailsActivity;
 import com.example.wilsonzhu.calendar_app.activity.BusStopsActivity;
@@ -53,5 +54,10 @@ public class IntentUtils {
     public static void startBusesDirectionActivity(Activity activity) {
         StartActivityWrapper startActivityWrapper = new StartActivityWrapper(activity);
         startActivityWrapper.startActivity(new Intent (activity, BusDirectionActivity.class));
+    }
+
+    public static void startBusStopTimesActivity(Activity activity) {
+        StartActivityWrapper startActivityWrapper = new StartActivityWrapper(activity);
+        startActivityWrapper.startActivity(new Intent (activity, BusStopTimesActivity.class));
     }
 }

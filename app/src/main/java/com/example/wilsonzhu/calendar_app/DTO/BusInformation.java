@@ -9,6 +9,7 @@ public class BusInformation {
     private String busName;
     private String busNumber;
     private ArrayList<String> busStops = new ArrayList<>();
+    private ArrayList<String> busStopTag = new ArrayList<>();
 
     public BusInformation(String busName, String busNumber) {
         this.busName = busName;
@@ -45,5 +46,13 @@ public class BusInformation {
 
     public void addBusStop(String busStop) {
         this.busStops.add(busStop);
+    }
+
+    public ArrayList<String> getBusStopTags() {
+        return busStopTag;
+    }
+
+    public void addBusStopTags(String busStopTag) {
+        this.getBusStopTags().add(busStopTag);
     }
 }

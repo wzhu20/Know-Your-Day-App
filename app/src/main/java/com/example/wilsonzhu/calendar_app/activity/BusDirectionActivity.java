@@ -82,10 +82,12 @@ public class BusDirectionActivity extends BaseActivity implements Button.OnClick
 
                         for (int i = 0; i < jsonArray1.length(); i++) {
                             applicationVar.getBusInformation(firstNewKey).addBusStop(((JSONObject) jsonArray1.get(i)).getString("content"));
+                            applicationVar.getBusInformation(firstNewKey).addBusStopTags(((JSONObject) jsonArray1.get(i)).getString("tag"));
                         }
 
                         for (int i = 0; i < jsonArray2.length(); i++) {
                             applicationVar.getBusInformation(secondNewKey).addBusStop(((JSONObject) jsonArray2.get(i)).getString("content"));
+                            applicationVar.getBusInformation(secondNewKey).addBusStopTags(((JSONObject) jsonArray2.get(i)).getString("tag"));
                         }
 
                         firstDirectionButton.setOnClickListener(new Button.OnClickListener() {

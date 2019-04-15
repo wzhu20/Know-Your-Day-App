@@ -2,10 +2,10 @@ package com.example.wilsonzhu.calendar_app.DTO;
 
 import java.util.ArrayList;
 
-public class BusStop {
+public class BusStopTimes {
     private ArrayList<String> busStopTimes;
 
-    public BusStop() {
+    public BusStopTimes() {
         busStopTimes = new ArrayList<>();
     }
 

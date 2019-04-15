@@ -13,8 +13,19 @@ public class MyApplicationVar extends Application {
     private String BUSROUTE = "53";
     private String BUSNAME = "";
     private String DIRECTION = "";
+
+    private String TAG = "";
+
     private HashMap<String, BusInformation> busInformationMap = new HashMap<>();
     private HashMap<String, ArrayList<String>> busDirectionMap = new HashMap<>();
+
+    public String getTAG() {
+        return TAG;
+    }
+
+    public void setTAG(String TAG) {
+        this.TAG = TAG;
+    }
 
     public void updateBusDirectionMap(String key, ArrayList<String> value) {
         busDirectionMap.put(key, value);
@@ -26,6 +37,7 @@ public class MyApplicationVar extends Application {
         }
         return new ArrayList<>();
     }
+
     public String getDIRECTION() {
         return DIRECTION;
     }

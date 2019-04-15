@@ -5,21 +5,10 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.android.volley.VolleyError;
 import com.example.wilsonzhu.calendar_app.Adapter.BusStopsAdapter;
-import com.example.wilsonzhu.calendar_app.DTO.BusInformation;
-import com.example.wilsonzhu.calendar_app.HTTPClient.HTTPErrorListener;
-import com.example.wilsonzhu.calendar_app.HTTPClient.HTTPRequestHandler;
-import com.example.wilsonzhu.calendar_app.HTTPClient.HTTPRequestListener;
 import com.example.wilsonzhu.calendar_app.Presenter.TTCBusInformationPresenter;
 import com.example.wilsonzhu.calendar_app.R;
 import com.example.wilsonzhu.calendar_app.Utils.MyApplicationVar;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
 
 public class BusStopsActivity extends BaseActivity implements TTCBusInformationPresenter.TTCBusView {
     private String URL = "http://webservices.nextbus.com/service/publicJSONFeed?command=schedule&a=ttc&r=";
@@ -27,14 +16,12 @@ public class BusStopsActivity extends BaseActivity implements TTCBusInformationP
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
-    private HTTPRequestHandler requestHandler;
     private MyApplicationVar applicationVar;
 
     @Override
     protected void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
         applicationVar = ((MyApplicationVar) this.getApplication());
-        requestHandler = new HTTPRequestHandler();
         setContentView(R.layout.activity_ttc_station);
         recyclerView = findViewById(R.id.ttc_recycler_view);
         recyclerView.setHasFixedSize(true);
@@ -47,7 +34,8 @@ public class BusStopsActivity extends BaseActivity implements TTCBusInformationP
         final Activity activity = this;
         String routeChosen = applicationVar.getBusRouteChoesen();
         String directionChosen = applicationVar.getDIRECTION();
-        mAdapter = new BusStopsAdapter(applicationVar.getBusInformation(routeChosen + directionChosen).getBusStops(), activity);
+        mAdapter = new BusStopsAdapter(applicationVar.getBusInformation(routeChosen + directionChosen).getBusStops(),
+                applicationVar.getBusInformation(routeChosen + directionChosen).getBusStopTags(), activity);
         recyclerView.setAdapter(mAdapter);
     }
 
