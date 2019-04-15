@@ -89,8 +89,7 @@ public class BusStopTimesActivity extends BaseActivity {
                                     allBusTimes.add(busName + " in " + minute + " minutes");
                                 }
                             } else {
-                                String minutes = ((JSONObject) jsonObject).optString("minutes");
-                                allBusTimes.add(busName + " in " + minutes + " minutes");
+                                allBusTimes.add("No more buses!");
                             }
                         } else {
                             allBusTimes.add("No more buses!");
