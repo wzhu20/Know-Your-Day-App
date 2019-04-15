@@ -17,10 +17,12 @@ import java.util.List;
 
 public class BusStopsAdapter extends RecyclerView.Adapter<BusStopsAdapter.BusViewHolder> {
     private List<String> allBusStops;
+    private List<String> allBusStopTags;
     private Activity activity;
 
-    public BusStopsAdapter(List<String> allBusStops, Activity activity) {
+    public BusStopsAdapter(List<String> allBusStops, List<String> allBusStopTags, Activity activity) {
         this.allBusStops = allBusStops;
+        this.allBusStopTags = allBusStopTags;
         this.activity = activity;
 
     }
@@ -36,11 +38,14 @@ public class BusStopsAdapter extends RecyclerView.Adapter<BusStopsAdapter.BusVie
     @Override
     public void onBindViewHolder(@NonNull BusStopsAdapter.BusViewHolder ttcStationViewHolder, int i) {
         final String busInformation = allBusStops.get(i);
+        final String busTag = allBusStopTags.get(i);
         ttcStationViewHolder.button.setText(busInformation);
         ttcStationViewHolder.button.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((MyApplicationVar) activity.getApplication()).setBusRouteChosen(busInformation);
+                //((MyApplicationVar) activity.getApplication()).setBusRouteChosen(busInformation);
+                ((MyApplicationVar) activity.getApplication()).setTAG(busTag);
+                IntentUtils.startBusStopTimesActivity(activity);
             }
         });
     }

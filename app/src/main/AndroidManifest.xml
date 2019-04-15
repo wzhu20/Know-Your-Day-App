@@ -23,6 +23,7 @@
         <activity android:name=".activity.BusesActivity"/>
         <activity android:name=".activity.TTCSubwayLinesActivity"></activity>
         <activity android:name=".activity.BusDirectionActivity"></activity>
+        <activity android:name=".activity.BusStopTimesActivity"></activity>
 
     </application>
 
