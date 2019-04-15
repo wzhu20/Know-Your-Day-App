@@ -26,10 +26,10 @@ public class TTCSubwayLinesActivity extends BaseActivity implements Button.OnCli
         lineOneButton.setOnClickListener(this);
         lineTwoButton = this.findViewById(R.id.line_2);
         lineTwoButton.setOnClickListener(this);
-        lineThreeButton = this.findViewById(R.id.line_3);
-        lineThreeButton.setOnClickListener(this);
-        lineFourButton = this.findViewById(R.id.line_4);
-        lineFourButton.setOnClickListener(this);
+//        lineThreeButton = this.findViewById(R.id.line_3);
+//        lineThreeButton.setOnClickListener(this);
+//        lineFourButton = this.findViewById(R.id.line_4);
+//        lineFourButton.setOnClickListener(this);
     }
 
     @Override
@@ -40,12 +40,12 @@ public class TTCSubwayLinesActivity extends BaseActivity implements Button.OnCli
         else if (view.getId() == R.id.line_2) {
             ((MyApplicationVar)this.getApplication()).setLineChosen(2);
         }
-        else if (view.getId() == R.id.line_3) {
-            ((MyApplicationVar)this.getApplication()).setLineChosen(3);
-        }
-        else {
-            ((MyApplicationVar)this.getApplication()).setLineChosen(4);
-        }
+//        else if (view.getId() == R.id.line_3) {
+//            ((MyApplicationVar)this.getApplication()).setLineChosen(3);
+//        }
+//        else {
+//            ((MyApplicationVar)this.getApplication()).setLineChosen(4);
+//        }
         IntentUtils.startBusesActivity(this);
     }
 }
