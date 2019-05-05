@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.wilsonzhu.calendar_app">
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <application
         android:allowBackup="true"
         android:name=".Utils.MyApplicationVar"
@@ -10,6 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.awareness.AIzaSyDZKNBHrJBkec4fGbfkDsD5Wmb5H_1_KKE"
+            android:value="AIzaSyDZKNBHrJBkec4fGbfkDsD5Wmb5H_1_KKE"/>
         <activity android:name=".activity.SplashActivity" android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -24,6 +28,7 @@
         <activity android:name=".activity.TTCSubwayLinesActivity"></activity>
         <activity android:name=".activity.BusDirectionActivity"></activity>
         <activity android:name=".activity.BusStopTimesActivity"></activity>
+        <activity android:name=".activity.WeatherActivity"></activity>
 
     </application>
 

@@ -9,6 +9,7 @@ import com.example.wilsonzhu.calendar_app.activity.BusesActivity;
 import com.example.wilsonzhu.calendar_app.activity.DescriptionDetailsActivity;
 import com.example.wilsonzhu.calendar_app.activity.BusStopsActivity;
 import com.example.wilsonzhu.calendar_app.activity.TTCSubwayLinesActivity;
+import com.example.wilsonzhu.calendar_app.activity.WeatherActivity;
 
 /**
  * Created by Wilson Zhu on 3/4/2018.
@@ -59,5 +60,10 @@ public class IntentUtils {
     public static void startBusStopTimesActivity(Activity activity) {
         StartActivityWrapper startActivityWrapper = new StartActivityWrapper(activity);
         startActivityWrapper.startActivity(new Intent (activity, BusStopTimesActivity.class));
+    }
+
+    public static void startWeatherActivity(Activity activity) {
+        StartActivityWrapper startActivityWrapper = new StartActivityWrapper(activity);
+        startActivityWrapper.startActivity(new Intent (activity, WeatherActivity.class));
     }
 }

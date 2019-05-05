@@ -36,9 +36,11 @@ public class TTCSubwayLinesActivity extends BaseActivity implements Button.OnCli
     public void onClick(View view) {
         if (view.getId() == R.id.line_1) {
             ((MyApplicationVar)this.getApplication()).setLineChosen(1);
+            IntentUtils.startBusesActivity(this);
         }
         else if (view.getId() == R.id.line_2) {
             ((MyApplicationVar)this.getApplication()).setLineChosen(2);
+            IntentUtils.startWeatherActivity(this);
         }
 //        else if (view.getId() == R.id.line_3) {
 //            ((MyApplicationVar)this.getApplication()).setLineChosen(3);
@@ -46,6 +48,5 @@ public class TTCSubwayLinesActivity extends BaseActivity implements Button.OnCli
 //        else {
 //            ((MyApplicationVar)this.getApplication()).setLineChosen(4);
 //        }
-        IntentUtils.startBusesActivity(this);
     }
 }
