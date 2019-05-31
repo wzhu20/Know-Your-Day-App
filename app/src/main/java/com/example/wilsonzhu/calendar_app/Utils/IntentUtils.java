@@ -8,7 +8,7 @@ import com.example.wilsonzhu.calendar_app.activity.BusStopTimesActivity;
 import com.example.wilsonzhu.calendar_app.activity.BusesActivity;
 import com.example.wilsonzhu.calendar_app.activity.DescriptionDetailsActivity;
 import com.example.wilsonzhu.calendar_app.activity.BusStopsActivity;
-import com.example.wilsonzhu.calendar_app.activity.TTCSubwayLinesActivity;
+import com.example.wilsonzhu.calendar_app.activity.AppMenuActivity;
 import com.example.wilsonzhu.calendar_app.activity.WeatherActivity;
 
 /**
@@ -39,7 +39,7 @@ public class IntentUtils {
     public static void startSplashScreenActivity(Activity activity)
     {
         StartActivityWrapper startActivityWrapper = new StartActivityWrapper(activity);
-        startActivityWrapper.startActivity(new Intent (activity, TTCSubwayLinesActivity.class));
+        startActivityWrapper.startActivity(new Intent (activity, AppMenuActivity.class));
     }
 
     public static void startBusStopsActivity(Activity activity) {

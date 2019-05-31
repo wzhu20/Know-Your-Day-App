@@ -25,7 +25,7 @@
         <activity android:name=".activity.CalendarActivity"/>
         <activity android:name=".activity.DescriptionDetailsActivity"/>
         <activity android:name=".activity.BusesActivity"/>
-        <activity android:name=".activity.TTCSubwayLinesActivity"></activity>
+        <activity android:name=".activity.AppMenuActivity"></activity>
         <activity android:name=".activity.BusDirectionActivity"></activity>
         <activity android:name=".activity.BusStopTimesActivity"></activity>
         <activity android:name=".activity.WeatherActivity"></activity>
